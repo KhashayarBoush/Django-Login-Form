@@ -1,0 +1,292 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    direction: rtl;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    box-sizing: border-box;
+    color: inherit;
+    font-family: iran;
+}
+@font-face {
+    font-family: iran;
+    src: url(fonts/Yekan.ttf);
+  }
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+}
+.back_skew{
+    width: 75%;
+    height: 100vh;
+    position: absolute;
+    right: -25%;
+    background: #4f6173;
+    transform: skew(-20deg,0deg);
+}
+.container_main,
+.container_login,
+.container_signup
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    border-radius: 50px;
+    overflow: hidden;
+    width: 80%;
+    height: 80vh;
+}
+.container_main .dots{
+    flex: 0.5;
+    background: #ffffff;
+    text-align: center;
+    padding-top: 40px;
+    position: relative;
+}
+.dots .dot_3{
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%,-50%);
+    width: 40px;
+    height: 60px;;
+}
+.dots .dot_3 span{
+    cursor: pointer;
+    display: block;
+    width: 15px;
+    margin: 20px;
+    height: 15px;
+    border-radius: 50%;
+    background: #aaa;
+}
+.dots .dot_3 span.active_circle{
+    background: #000;
+}
+.dots i{
+    font-size: 30px;
+    cursor: pointer;
+}
+.container_main .login{
+    flex: 2;
+    background: #8352f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+
+}
+.container_main .login.active,
+.container_main .signup.active{
+    flex: 2.2 !important;
+    color: #ffffff;
+    flex-direction: column;
+    transition : 2s;
+}
+.container_main .signup h3{
+    margin-right: 25px;
+}
+.container_main h3{
+    color: #aaaa;
+    cursor: pointer;
+}
+.container_main h3.active{
+    color: #ffffff;
+}
+.container_main .login i,
+.container_main .signup i{
+    color: #999999;
+    font-size: 70px;
+    cursor: pointer;
+}
+.container_main .login i.active,
+.container_main .signup i.active{
+    color: #ffffff !important;
+}
+.container_main .signup{
+    flex: 2;
+    background: #495157;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #ffffff;
+    transition : 2s;
+}
+.container_login .dots{
+    flex: 0.5;
+    background: #ffffff;
+    text-align: center;
+    padding-top: 40px;
+    position: relative;
+}
+.container_login .login{
+    flex: 2;
+    background: #8352f2;
+    padding: 100px;
+    color: #fff;
+}
+.container_login .signup{
+    flex: 0.5;
+    background: #495157;
+    text-align: center;
+    padding-top: 40px;
+}
+.container_login .signup i{
+    color: #999999;
+    font-size: 40px;
+    cursor: pointer;
+}
+.container_signup .dots{
+    flex: 0.5;
+    background: #ffffff;
+    text-align: center;
+    padding-top: 40px;
+    position: relative;
+}
+.container_signup .login{
+    flex: 0.5;
+    background: #8352f2;
+    text-align: center;
+    padding-top: 40px;
+}
+.container_signup .login i{
+    color: #999999;
+    font-size: 40px;
+    cursor: pointer;
+}
+.container_signup .signup{
+    flex: 2;
+    background: #495157;
+    padding: 100px;
+    color: #fff;
+}
+.container_signup .signup form,
+.container_login .login form
+{
+    width: 100%;
+    text-align: center;
+}
+.container_signup .signup h1,
+.container_login .login h1
+{
+    margin-bottom: 7%;
+}
+.container_signup .signup form div,
+.container_login .login form div
+{
+    text-align: center;
+    margin-top: 20px;
+    height: 50px;;
+    position: relative;
+}
+.container_signup .signup form div label,
+.container_login .login form div label
+{
+    position: absolute;
+    right: 70px;
+    top: 20px;
+    transition: 0.5s;
+}
+.container_signup .signup form div input:focus ~ .label_animation,
+.container_signup .signup form div input:valid ~ .label_animation,
+.container_login .login form div input:focus ~ .label_animation,
+.container_login .login form div input:valid ~ .label_animation
+{
+    top: -10px;
+    right: 60px;
+}
+.container_signup .signup form div input,
+.container_login .login form div input
+{
+    width: 80%;
+    background: none;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.container_signup .signup form a,
+.container_login .login form a
+{
+    float: right;
+    width: 100px;
+    height: 40px;
+    margin: 50px 80px;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 50px;
+    background: rgba(0,0,0,0.2);
+}
+.container_signup .signup form a i,
+.container_login .login form a i{
+    font-size: 20px;
+    cursor: pointer;
+}
+.container_signup .signup form div i,
+.container_login .login form div i{
+    cursor: pointer;
+}
+.loading{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: blue;
+    overflow: hidden;
+    animation: 7s loading forwards linear;
+}
+.loading::before{
+    content: '';
+    background: url(images/wave.png) repeat-x;
+    background-size: 50% 20%;
+    position: absolute;
+    top: 0;
+    transform: rotate(180deg) translateY(80%);
+    width: 100%;
+    height: 20%;
+    animation: 30s wave infinite linear;
+}
+.logo{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 220px;
+    height: 210px;
+    background: url(images/logo.png) no-repeat;
+    background-size: 100% 100%;
+}
+@keyframes wave{
+   100%{
+        background-position: 5000px 0;
+   }
+}
+@keyframes loading{
+    0%{
+        height: 0vh;
+    }
+    100%{
+        height: 100vh;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .loading::before{
+        background-size: 90% 20%;
+    }
+    @keyframes wave{
+   100%{
+        background-position: 3000px 0;
+   }
+}
+}
